@@ -1,0 +1,47 @@
+{{ 'sujatra-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-announcement-bar" style="background: {{ section.settings.gradient_color }}">
+  <p class="custom-announcement-bar__text">
+    {{ section.settings.announcement }}
+    <span class="custom-announcement-bar__dot">-</span>
+    <a href="{{ section.settings.shop_now_url }}" class="custom-announcement-bar__link">
+      <span class="custom-announcement-bar__link-text">
+        {{ section.settings.shop_now }}
+      </span>
+    </a>
+  </p>
+</div>
+
+{% schema %}
+{
+  "name": "Sujartra Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Announcement",
+      "id": "announcement"
+    },
+    {
+      "type": "text",
+      "label": "Shop now",
+      "id": "shop_now"
+    },
+    {
+      "type": "url",
+      "label": "Shop now url",
+      "id": "shop_now_url"
+    },
+    {
+      "type": "color_background",
+      "label": "Gradient Color",
+      "id": "gradient_color",
+      "default": "linear-gradient(90deg,#CF2F85, #D7572E)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sujartra Announcement Bar"
+    }
+  ]
+}
+{% endschema %}

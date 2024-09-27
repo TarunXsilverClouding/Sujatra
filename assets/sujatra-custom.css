@@ -1,0 +1,845 @@
+/*-------------------------------------------- Announcement bar ----------------------------------------------- */
+
+.custom-announcement-bar {
+  padding: 8px 16px 8px 16px;
+  text-align: center;
+  color: #fff;
+  height: 30px;
+}
+
+.custom-announcement-bar__text {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 14.4px;
+  text-align: center;
+}
+
+.custom-announcement-bar__dot {
+  font-size: 12px;
+}
+
+.custom-announcement-bar__link {
+  color: #eea2a3;
+  text-decoration: underline;
+}
+
+.custom-announcement-bar__link-text {
+  font-weight: 600;
+  color: #eea2a3;
+  line-height: 14.4px;
+}
+
+@media screen and (min-width: 750px) {
+  .custom-announcement-bar {
+    padding: 12px 202px 12px 202px;
+    height: 43px;
+  }
+
+  .custom-announcement-bar__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+  }
+
+  .custom-announcement-bar__dot {
+    font-size: 16px;
+  }
+}
+
+/* ------------------------------------------------- Anouncement bar END ----------------------------------------- */
+
+/* ------------------------------------------- Image - Slide --------------------------------------------------- */
+
+.banner--mobile-bottom .banner__box {
+  background-color: transparent;
+  color: white;
+}
+
+.banner__category {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15.22px;
+  letter-spacing: 3px;
+}
+
+.banner__category p {
+  margin: 0;
+}
+
+.banner__heading {
+  color: white;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28.8px;
+  letter-spacing: 1px;
+}
+
+.button.button--primary {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15.22px;
+  border-radius: 8px;
+  height: 28px;
+  width: 124px;
+  padding: 0;
+  background-color: #d13f61;
+  opacity: 1;
+  letter-spacing: 2px;
+  min-height: unset;
+}
+
+.button.button--primary:after {
+  box-shadow: none;
+}
+
+.banner__text .rte {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.6px;
+  letter-spacing: 1px;
+}
+
+.banner__media.media .slidesho__media-mobile-media {
+  display: block;
+}
+
+.slidesho__media-mobile-media img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.slideshow__text-wrapper.banner__content::after {
+  content: "";
+  opacity: 0.6;
+  background: linear-gradient(to bottom, transparent, #000);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.slideshow__controls.slider-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 1s ease;
+  border: none;
+}
+
+.slider-counter__link--dots.slider-counter__link--active .dot {
+  width: 20px;
+  border-radius: 20px;
+  background: white;
+  border-color: white;
+  height: 7px;
+}
+
+.slider-counter__link--dots .dot {
+  height: 7px;
+  width: 7px;
+  background-color: #ffffff80;
+  border-color: #ffffff80;
+}
+
+.slider-button {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .banner__media {
+    height: 100% !important;
+  }
+
+  .slideshow__text.banner__box {
+    max-width: 64.5rem;
+  }
+
+  .banner__category {
+    font-size: 20px;
+    line-height: 25.36px;
+    letter-spacing: 6px;
+  }
+
+  .banner__heading {
+    font-size: 60px;
+    line-height: 72px;
+    margin: 0;
+  }
+
+  .banner__text.rte {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .button.button--primary {
+    padding: 16px 48px;
+    width: 195px;
+    font-size: 15px;
+    line-height: 19.02px;
+    height: 44px;
+  }
+
+  .banner__media.media .slidesho__media-mobile-media {
+    display: none;
+  }
+
+  .slideshow__controls.slider-buttons {
+    top: 50%;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    transform: translateY(-50%) rotate(90deg);
+    border: none;
+  }
+
+  .slideshow__text-wrapper.banner__content::after {
+    display: none;
+  }
+
+  .slidesho__media-desktop-media img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  /* .banner--large.banner--mobile-bottom:not(.banner--adapt) .banner__media.media,
+  .banner--large.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt)
+    > .banner__media.media {
+    height: 87rem;
+  }
+
+  .slider-mobile-gutter {
+    height: 87rem;
+  } */
+
+  .slideshow__text-wrapper.banner__content {
+    position: absolute;
+    bottom: 0;
+  }
+
+  /* .slideshow.banner--mobile-bottom::after,
+  .slideshow.banner--mobile-bottom .banner__media::after {
+    display: block;
+  } */
+}
+
+/* ------------------------------------------- Image - Slide END --------------------------------------------------- */
+
+/* ------------------------------------------- About Sujatra - Start --------------------------------------------------- */
+
+.custom-about-section__header {
+  margin-top: 5px;
+  height: 28px;
+  text-align: center;
+}
+
+.custom-about-section__heading {
+  margin: 0;
+  font-weight: 900;
+  color: white;
+  line-height: 24px;
+  font-size: 20px;
+  padding: 2px 0;
+}
+
+.custom-about-section__description-title {
+  color: #d13f61;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15.6px;
+}
+
+.custom-about-section__description-content {
+  font-size: 12.5px;
+  line-height: 18.75px;
+  font-weight: 400;
+  color: #5d5d5d;
+}
+
+.custom-about-section__description {
+  padding: 0 7px;
+}
+
+.custom-about-section__image {
+  /* width: 100%;
+  height: auto; */
+}
+
+.swiper-slide.custom-about-section__slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.custom-about-section__slider {
+  padding: 0 7px;
+}
+
+.custom-about-section__slider .swiper-wrapper div {
+  margin-top: 45px;
+}
+
+.swiper-wrapper .custom-about-section__slide.swiper-slide-active {
+  margin-top: 18px;
+  transition: all 0.4s ease;
+}
+
+.custom-about-section__description-desktop_des {
+  font-weight: 300;
+  color: #5d5d5d;
+  font-size: 60px;
+  line-height: 72px;
+  /* text-align: center; */
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.custom-about-section__description-desktop_sub {
+  font-weight: 600;
+  line-height: 22.5px;
+  font-size: 15px;
+  color: #5f5f5f;
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .custom-about-section__header {
+    height: 69px;
+    margin-top: 0;
+  }
+  .custom-about-section__heading {
+    line-height: 60px;
+    font-size: 50px;
+    padding: 0;
+  }
+
+  .custom-about-section__image {
+    /* width: auto; */
+  }
+
+  .custom-about-section__slider .swiper-wrapper div {
+    margin-top: 0;
+  }
+
+  .swiper-wrapper div {
+    margin-top: 0;
+  }
+
+  .swiper-wrapper .custom-about-section__slide.swiper-slide-active {
+    margin-top: 0;
+  }
+
+  .custom-about-section__body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .custom-about-section__main-body {
+    padding: 20px 50px 0px 50px;
+  }
+
+  .custom-about-section__slider {
+    width: 90%;
+    padding: 0;
+  }
+
+  .custom-about-section__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .custom-about-section__body {
+    border-bottom: 2px solid #bfbfbf;
+    padding-bottom: 30px;
+  }
+}
+
+/* ------------------------------------------- About Sujatra - END --------------------------------------------------- */
+
+/* ------------------------------------------- About Sujatra Image - Start --------------------------------------------------- */
+
+.about-sujatra-image-section {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.about-sujatra-image-section__text-container {
+  position: absolute; /* Allow for absolute positioning */
+}
+
+.about-sujatra-image-section__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  text-align: center;
+}
+
+.about-sujatra-image-section__image-container {
+  position: relative;
+}
+.about-sujatra-image-section__image-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.about-sujatra-image-section__block {
+  padding: 0 7px 7px 7px;
+  position: relative;
+}
+
+.about-sujatra-image-section__image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  pointer-events: none; /* Ensure this doesn't block interactions */
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.about-sujatra-image-section__text-container {
+  max-width: 150px;
+  text-align: center;
+  z-index: 2;
+}
+
+.about-sujatra-image-section__text-container--left {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.about-sujatra-image-section__text-container--top {
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
+.about-sujatra-image-section__text-container--right {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.about-sujatra-image-section__text-container--bottom {
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 750px) {
+  .about-sujatra-image-section__content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .about-sujatra-image-section__block {
+    flex-grow: 1;
+  }
+  .about-sujatra-image-section__text {
+    font-size: 25px;
+    line-height: 37.5px;
+  }
+  .about-sujatra-image-section__text-container {
+    max-width: 202px;
+  }
+}
+
+/* ------------------------------------------- About Sujatra Image - END --------------------------------------------------- */
+
+/* ------------------------------------------- DESKTOP SUPPORT - START --------------------------------------------------- */
+
+.desktop-support__content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1500px;
+  margin: 0 auto;
+  height: 100%;
+  gap: 5px;
+}
+
+.desktop-support__block {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  flex-grow: 1;
+  padding: 15px 0;
+}
+
+.desktop-support__description {
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 10.8px;
+  letter-spacing: 1px;
+  color: #d13f61;
+  margin: 0;
+  max-width: 50px;
+  text-align: center;
+}
+
+.desktop-support__text {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-support {
+  padding: 0;
+}
+
+.mobile-device {
+  padding: 0 7px;
+  padding-bottom: 15px;
+}
+
+@media screen and (min-width: 750px) {
+  .desktop-support__block {
+    gap: 30px;
+    flex-direction: row;
+  }
+
+  .desktop-support {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+  }
+
+  .desktop-support__description {
+    color: #00332b;
+    font-weight: 600;
+    line-height: 24px;
+    font-size: 16px;
+    max-width: 165px;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 900px) {
+  .desktop-support__block {
+    gap: 10px;
+  }
+}
+
+/* ------------------------------------------- DESKTOP SUPPORT - END --------------------------------------------------- */
+/* ------------------------------------------- CUSTOM SLIDER - START --------------------------------------------------- */
+
+.custom-slider__image-container img {
+  /* height: 100%; */
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.custom-slider {
+  padding: 0 7px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 0;
+}
+
+.custom-slider__image {
+  position: relative;
+}
+
+.custom-slider__content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  /* padding-bottom: 20px; */
+}
+
+.custom-slider__category {
+  font-weight: 400;
+  font-size: 4px;
+  line-height: 5.07px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.custom-slider__title {
+  font-weight: 300;
+  font-size: 8px;
+  line-height: 9.6px;
+  color: white;
+  margin: 0;
+}
+
+.custom-slider__button {
+  color: white;
+  font-weight: 500;
+  line-height: 6.34px;
+  font-size: 5px;
+  border: 0.4px solid white;
+  border-radius: 4px;
+  padding: 2px 6px;
+  height: 10.85px;
+  width: 52.84px;
+}
+
+.custom-slider__content-container {
+  padding: 20px;
+}
+
+.custom-slider__content--end {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-slider__content--end .custom-slider__button {
+  margin-top: 20px;
+}
+
+.custom-slider__navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 9;
+  padding: 0;
+  left: 0px;
+  pointer-events: none;
+}
+
+.custom-slider__arrow {
+  background: white;
+  border-radius: 3px;
+  opacity: 0.8;
+  padding: 8px;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+.custom-slider__arrow--prev {
+  margin-left: 8px;
+}
+
+.custom-slider__arrow--next {
+  margin-right: 8px;
+}
+
+.custom-slider__arrow svg {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navigation-dot-parent {
+  padding-bottom: 10px;
+}
+
+.navigation-dot-parent .swiper-pagination {
+  height: 16px;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 20px;
+  height: 7px;
+  border-radius: 20px;
+  background-color: #00332b;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  color: #6c6c6c;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 749px) {
+  .custom-slider__image-container img {
+    height: 100%;
+  }
+
+  .custom-slider__arrow svg {
+    height: 6px;
+    width: 3px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .custom-slider__category {
+    font-size: 12px;
+    line-height: 14.29px;
+    letter-spacing: 5px;
+    font-weight: 400;
+  }
+  .custom-slider__title {
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 300;
+  }
+  .custom-slider__button {
+    font-weight: 500;
+    font-size: 12px;
+    width: 107px;
+    line-height: 25.36px;
+    height: 25px;
+    margin-top: 24px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .navigation-dot-parent {
+    padding-bottom: 35px;
+  }
+
+  .navigation-dot-parent .swiper-pagination {
+    height: 20px;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 29px;
+    height: 10px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ------------------------------------------- CUSTOM SLIDER - END --------------------------------------------------- */
+
+/* ------------------------------------------- Strip Banner - START --------------------------------------------------- */
+
+.banner-strip-section__header {
+  height: 28px;
+  text-align: center;
+}
+
+.banner-strip-section__heading {
+  margin: 0;
+  font-weight: 900;
+  color: white;
+  line-height: 24px;
+  font-size: 20px;
+  padding: 2px 0;
+}
+
+@media screen and (min-width: 750px) {
+  .banner-strip-section__header {
+    height: 69px;
+    margin-top: 0;
+  }
+
+  .banner-strip-section__heading {
+    line-height: 60px;
+    font-size: 50px;
+    padding: 0;
+  }
+}
+
+/* ------------------------------------------- Strip Banner - END --------------------------------------------------- */
+
+/* ------------------------------------------- Custom Image Text - START --------------------------------------------------- */
+
+.custom-text-section {
+  background-color: #f5f5f5;
+}
+
+.custom-text-section__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.custom-text-section__text-container {
+  width: 50%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.custom-text-section__text {
+  margin: 10px 0;
+}
+
+.custom-text-section__text--title {
+  font-size: 8px;
+  font-weight: 300;
+  line-height: 9.6px;
+  color: #3a3a3a;
+  text-transform: uppercase;
+}
+
+.custom-text-section__text--sub-heading {
+  font-size: 5px;
+  line-height: 6px;
+  font-weight: 300;
+  color: black;
+  text-transform: uppercase;
+}
+
+.custom-text-section__text--input-text {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 5px;
+  line-height: 6px;
+  font-weight: 300;
+  text-align: right;
+}
+
+.custom-text-section__image-container {
+  width: 50%;
+  flex-grow: 1;
+}
+
+.custom-text-section__image-container img {
+  width: 100%;
+  display: block;
+}
+
+.custom-text-section__image {
+  width: 100%;
+}
+
+.custom-text-section__text--title::after {
+  content: "";
+  display: block;
+  width: calc(100% - 50px);
+  height: 2px;
+  background-color: #bfbfbf;
+  margin: 20px auto 0 auto;
+}
+
+.custom-text-section__text-container-parent {
+  position: relative;
+}
+
+@media (min-width: 990px) {
+  .custom-text-section__text--title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .custom-text-section__text--sub-heading {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .custom-text-section__text--input-text {
+    font-size: 22px;
+    line-height: 26.4px;
+  }
+}

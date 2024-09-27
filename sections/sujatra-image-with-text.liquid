@@ -1,0 +1,73 @@
+{{ 'sujatra-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-text-section">
+  <div class="custom-text-section__container">
+    <div class="custom-text-section__text-container-parent">
+      <div class="custom-text-section__text-container">
+        <div class="custom-text-section__text custom-text-section__text--title">
+          {{ section.settings.title }}
+        </div>
+        <div class="custom-text-section__text custom-text-section__text--sub-heading">
+          {{ section.settings.sub_heading }}
+        </div>
+        <div class="custom-text-section__text custom-text-section__text--input-text">
+          {{ section.settings.input_text }}
+        </div>
+      </div>
+    </div>
+    <div class="custom-text-section__image-container">
+      {% if section.settings.select_image != blank %}
+        {%- liquid
+          assign height = section.settings.select_image | divided_by: section.settings.select_image | round
+
+          assign sizes = '120vw'
+          assign widths = '150, 300, 450, 660, 900, 1320, 1800, 2136, 2400'
+
+          assign fetch_priority = 'high'
+        -%}
+
+        {% comment %} <img src="{{ block.settings.image | img_url: 'medium' }}" alt="Support Image"> {% endcomment %}
+        {{
+          section.settings.select_image
+          | image_url: width: 2400
+          | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
+        }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Sujatra text-image",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Title",
+      "id": "title"
+    },
+    {
+      "type": "text",
+      "label": "Sub Heading",
+      "id": "sub_heading"
+    },
+    {
+      "type": "text",
+      "label": "Input Text",
+      "id": "input_text"
+    },
+    {
+      "type": "image_picker",
+      "label": "Select Image",
+      "id": "select_image"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Sujatra Text Image"
+    }
+  ]
+}
+{% endschema %}

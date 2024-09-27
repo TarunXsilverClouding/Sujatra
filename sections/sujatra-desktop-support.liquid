@@ -1,0 +1,81 @@
+{{ 'sujatra-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="desktop-support {% if section.settings.support_device == 'desktop' %} small-hide {% else %}mobile-device medium-hide large-up-hide {% endif %} ">
+  <div class="desktop-support__content">
+    {% for block in section.blocks %}
+      <div class="desktop-support__block">
+        {% if block.settings.image != blank %}
+          {%- liquid
+            assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
+
+            assign sizes = '120vw'
+            assign widths = '348.31, 450, 660, 900, 1320, 1800, 2136, 2400, 3600, 3840'
+
+            assign fetch_priority = 'high'
+          -%}
+          <div class="desktop-support__image">
+            {% comment %} <img src="{{ block.settings.image | img_url: 'medium' }}" alt="Support Image"> {% endcomment %}
+            {{
+              block.settings.image
+              | image_url: width: 100
+              | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
+            }}
+          </div>
+        {% endif %}
+        {% if block.settings.enter_text != blank %}
+          <div class="desktop-support__text">
+            <p class="desktop-support__description">{{ block.settings.enter_text }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Support",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "label": "Support Devices",
+      "id": "support_device",
+      "default": "desktop",
+
+      "options": [
+        {
+          "label": "mobile",
+          "value": "mobile"
+        },
+        {
+          "label": "desktop",
+          "value": "desktop"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        },
+        {
+          "type": "text",
+          "label": "Enter Text",
+          "id": "enter_text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Support"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,164 @@
+{{ 'sujatra-custom.css' | asset_url | stylesheet_tag }}
+
+<section class="custom-about-section">
+  <!-- Header Block -->
+  <div class="custom-about-section__header" style="background: {{ section.settings.gradient_color }};">
+    <p class="custom-about-section__heading">
+      {% if section.settings.about_heading != blank %}
+        {{ '--' -}}
+        {{- section.settings.about_heading }}
+        {{ '--' }}
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="custom-about-section__main-body">
+    <!-- Slider Block -->
+    <div class="custom-about-section__body">
+      <div class="custom-about-section__slider swiper-container">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'slider' %}
+              <div class="swiper-slide custom-about-section__slide">
+                {% if block.settings.about_image != blank %}
+                  {%- liquid
+                    assign height = block.settings.about_image.width | divided_by: block.settings.about_image.aspect_ratio | round
+
+                    assign sizes = '120vw'
+                    assign widths = '242.34, 450, 660, 900, 1320, 1800, 2136, 2400, 3600, 3840'
+
+                    assign fetch_priority = 'high'
+                  -%}
+                  {{
+                    block.settings.about_image
+                    | image_url: width: 3840
+                    | image_tag:
+                      height: height,
+                      sizes: sizes,
+                      widths: widths,
+                      fetchpriority: fetch_priority,
+                      class: 'custom-about-section__image'
+                  }}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Description Block -->
+      <div class="custom-about-section__description">
+        <h3 class="custom-about-section__description-title medium-hide large-up-hide">
+          {% if section.settings.des_title != blank %}
+            {{ section.settings.des_title }}
+          {% endif %}
+        </h3>
+        <h2 class="custom-about-section__description-desktop_des small-hide">
+          {% if section.settings.desktop_des_title != blank %}
+            {{ section.settings.desktop_des_title }}
+          {% endif %}
+        </h2>
+        <p class="custom-about-section__description-desktop_sub small-hide">
+          {% if section.settings.desktop_sub_heading != blank %}
+            {{ section.settings.desktop_sub_heading }}
+          {% endif %}
+        </p>
+        <div class="custom-about-section__description-content">
+          {% if section.settings.description != blank %}
+            {{ section.settings.description }}
+          {% endif %}
+        </div>
+        <button class="button button--primary" src="{{ section.settings.cta_url }}">
+          {% if section.settings.cta_text != blank %}
+            {{ section.settings.cta_text }}
+          {% endif %}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.custom-about-section__slider', {
+      slidesPerView: 3, // Number of slides to show
+      spaceBetween: 5, // Space between slides
+      loop: true, // Enable loop mode
+      centeredSlides: true,
+      breakpoints: {
+        // when window width is >= 750px
+        750: {
+          slidesPerView: 4,
+          centeredSlides: false,
+        },
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "About Sujartra",
+  "settings": [
+    {
+      "type": "text",
+      "label": "About heading",
+      "id": "about_heading"
+    },
+    {
+      "type": "color_background",
+      "label": "Gradient Color",
+      "id": "gradient_color",
+      "default": "linear-gradient(90deg,#CF2F85, #D7572E)"
+    },
+    {
+      "type": "text",
+      "label": "Mobile Description Title",
+      "id": "des_title"
+    },
+    {
+      "type": "text",
+      "label": "Desktop Description Title",
+      "id": "desktop_des_title"
+    },
+    {
+      "type": "text",
+      "label": "Desktop Sub Heading",
+      "id": "desktop_sub_heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "description"
+    },
+    {
+      "type": "text",
+      "label": "CTA Text",
+      "id": "cta_text"
+    },
+    {
+      "type": "url",
+      "label": "CTA URL",
+      "id": "cta_url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider",
+      "name": "About Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "About Image",
+          "id": "about_image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Sujatra"
+    }
+  ]
+}
+{% endschema %}

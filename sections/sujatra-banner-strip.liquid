@@ -1,0 +1,58 @@
+{{ 'sujatra-custom.css' | asset_url | stylesheet_tag }}
+<div
+  class="banner-strip-section__header  {% if section.settings.device == 'desktop' %}small-hide{% endif %} {% if section.settings.device == 'mobile' %}medium-hide large-up-hide{% endif %}"
+  style="background: {{ section.settings.gradient_color }};"
+>
+  <p class="banner-strip-section__heading">
+    {% if section.settings.heading != blank %}
+      {{ '--' -}}
+      {{- section.settings.heading }}
+      {{ '--' }}
+    {% endif %}
+  </p>
+</div>
+
+{% schema %}
+{
+  "name": "Banner Strip",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "color_background",
+      "label": "Gradient Color",
+      "id": "gradient_color",
+      "default": "linear-gradient(90deg,#CF2F85, #D7572E)"
+    },
+    {
+      "type": "select",
+      "label": "Choose Device",
+      "id": "device",
+      "default": "mobile",
+      "options": [
+        {
+          "label": "both",
+          "value": "both"
+        },
+        {
+          "label": "mobile",
+          "value": "mobile"
+        },
+        {
+          "label": "desktop",
+          "value": "desktop"
+        }
+      ]
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Banner Strip"
+    }
+  ]
+}
+{% endschema %}
